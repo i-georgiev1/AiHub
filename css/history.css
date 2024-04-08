@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); 
+body{
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+.timeline-content {
+  opacity: 0; /* Initially hide the content */
+
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(0); }
+}
+
+.left-box .timeline-content {
+  animation-name: fadeIn, slideInFromRight;
+}
+
+.right-box .timeline-content {
+  animation-name: fadeIn, slideInFromLeft;
+}
+
+.left-box .timeline-content {
+  animation-name: fadeIn, slideInFromRight;
+  animation-duration: 1s, 1s;
+  animation-delay: 0.5s, 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.right-box .timeline-content {
+  animation-name: fadeIn, slideInFromLeft;
+  animation-duration: 1s, 1s;
+  animation-delay: 0.5s, 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+/* Custom styles */
+.timeline {
+  position: relative;
+  padding-top: 2rem;
+}
+
+
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  background: gray; 
+  transform: translateX(-50%);
+
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end; /* Align to the right side by default */
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border: 3px solid gray; /* Match the timeline color */
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.timeline-content {
+  position: relative;
+  width: calc(50% - 4rem); /* Subtract the width of the marker and some space */
+  padding: 1rem;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16); /* Optional: add shadow for better visibility */
+  border-radius: 30px;
+  text-align: justify;
+  background: rgb(180, 237, 247); 
+  font-size: 18px;
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: #007bff;
+  font-size: x-large;
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* Adjust the position of the content box for odd items */
+.timeline-item:nth-child(odd) {
+  justify-content: flex-start; /* Align to the left side for odd items */
+}
+
+/* Adjust the pointed shape based on the side */
+.timeline-item:nth-child(odd) .timeline-content:before {
+  right: 100%;
+  border-right: 10px solid; /* Color of the box */
+}
+
+.timeline-item:nth-child(even) .timeline-content:before {
+  left: 100%;
+  border-left: 10px solid; /* Color of the box */
+}
+
+/* Clearfix for the before and after elements */
+.timeline-content:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+/* Specific background colors for each box 
+.timeline-item:nth-child(1) .timeline-content {
+  background: #F9A8D4; 
+}*/
+
+
+.container {
+  padding: 0 5%; 
+  margin-top: 85px;
+}
+
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; 
+  height: 50px;
+  line-height: 50px; 
+  text-align: center; 
+  padding: 0; 
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px; 
+  opacity: 0;
+  visibility: hidden;
+  transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #0056b3;
+}
+
+#scrollToTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media (max-width: 768px) {
+  .timeline-line {
+    display: none; /* Hide the timeline line on mobile */
+  }
+
+  .timeline-item {
+    justify-content: center; /* Center the items */
+  }
+
+  .timeline-content {
+    width: 100%; /* Make the content box full width */
+    margin-left: 0; /* Adjust the margin for mobile */
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content:before,
+  .timeline-item:nth-child(even) .timeline-content:before {
+    display: none; /* Hide the pointed shapes */
+  }
+}
+
+
+
+
+

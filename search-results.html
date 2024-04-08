@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Резултати</title>
+        <link rel="stylesheet" href="css/search.css">
+        <link rel="icon" type="image/x-icon" href="/images/icon ai.png">
+    </head>
+    <body>
+        
+        <script src="js/navigation.js"></script>
+
+        
+        <div id="search-results"></div>
+
+        <script>
+            var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollToTopBtn.classList.add("visible");
+                } else {
+                    scrollToTopBtn.classList.remove("visible");
+                }
+            };
+
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
+
+        <script src="js/search.js"></script>
+
+        
+    </body>
+</html>

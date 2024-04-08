@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); 
+body{
+    font-family: "Ubuntu", sans-serif;
+    
+}
+
+.outline {
+    position:fixed;
+    width:25%;
+    margin-top: 85px;
+    background-color: rgb(27, 30, 44);
+    color:white;
+    padding-bottom: 100%;
+    padding-right: 40px;
+    padding-left: 25px;
+    
+}
+
+.outline h2{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.outline li{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.outline li a{
+    color:white;
+}
+
+.outline li a:hover{
+    color:#007bff;
+}
+
+.article {
+    margin-top: 100px;
+    float:right;
+    width:60%;
+}
+
+.article p {
+    font-size: 20px;
+    text-align: justify;
+    padding-bottom: 30px;
+}
+
+.article ul li{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.container{
+    margin-left: 0;
+    margin-right: 15%;
+}
+
+.ai_future_tech{
+    width: 80%;
+}
+
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; 
+    height: 50px;
+    line-height: 50px; 
+    text-align: center; 
+    padding: 0; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px; 
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (max-width: 880px) {
+    .outline {
+        position: relative; 
+        width: 100%;
+        padding-top:10px ;
+        padding-bottom: 5%;
+    }
+    .article h1{
+        text-align: center;
+    }
+
+    body{
+        position: relative;
+    }
+
+    html, body{
+        overflow-x: hidden;
+    }
+
+    .outline li {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .article {
+        width: 100%;
+        float: none;
+        margin: 0 8%;
+    }
+
+    .ai_future_tech{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+#two, #three, #four, #five, #six, #seven, #eight{
+    scroll-margin-top: 120px;
+}

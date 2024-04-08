@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); 
+body{
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+/* Adjusted Content Box Styles */
+.content-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto; /* Centering the row */
+    
+}
+
+.first-row{
+    margin-top: 105px;
+}
+.content-box {
+    display: flex; /* Enables Flexbox */
+    justify-content: space-between; /* Space between text and image */
+    align-items: center; /* Center items vertically */
+    background-color: rgb(180, 237, 247); /* Light background for contrast */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 5px; /* Reduced margin around each box */
+    box-sizing: border-box;
+    border-radius: 30px;
+    flex-basis: calc(50% - 10px); /* Adjust width for two boxes per row, considering reduced margin */
+}
+
+/* Typography consistent with navbar */
+.content-box p {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6; /* Improved readability */
+    text-align: justify;
+    font-size: 18px;
+    margin-right: 3%;
+}
+
+@media screen and (max-width: 768px) {
+    .content-box {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Align items to the start (left) */
+        flex-basis: 100%; /* Each box takes full width */
+    }
+
+    .box-image {
+        margin-left: 0; /* Reset margin-left for image */
+        margin-top: 10px; /* Space between text and image */
+        width: 100%; /* Image takes full width of the box */
+        align-items: center;
+    }
+
+    .text-content {
+        text-align: center; /* Center the text for a better look on small screens */
+    }
+}
+
+.content-box h2 {
+    font-family: 'Arial', sans-serif;
+    color: #007bff; /* A color that stands out, yet aligns with your navbar */
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 10px; /* Spacing between title and content */
+    width: 100%; /* Full width of the container */
+}
+
+.box-image {
+    margin-left: 10px; /* Reduced space on the left of the image */
+    margin-right: 10px; /* Reduced space on the right of the image */
+    width: 150px; /* Increased width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-content {
+    text-align: left; /* Text aligned to the left */
+    flex-grow: 1; /* Allows text content to grow and fill available space */
+}
+
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; 
+    height: 50px;
+    line-height: 50px; 
+    text-align: center; 
+    padding: 0; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px; 
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s, opacity 0.4s, visibility 0.4s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+@keyframes enter-animation {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .image-animation {
+      animation: enter-animation 0.8s 1;
+    }
+  }

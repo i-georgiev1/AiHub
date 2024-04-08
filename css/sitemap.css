@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); 
+body{
+    font-family: "Ubuntu", sans-serif;
+}
+
+.button-link {
+    text-decoration: none;
+    display: inline-block; /* Allows padding and width styles */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center; /* Centers text inside the link */
+    width: auto; /* Adjusts width to content */
+    margin-top: auto; /* Pushes the button to the bottom */
+    margin: auto 10px; /* Adjust as needed */
+
+    position: relative;
+}
+
+.drop-link{
+    background-color: #007bff;
+}
+
+.sitemap {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap as needed */
+    align-items: center;
+    justify-content: center;
+    margin: 126px 15% 40px 15%;
+}
+
+
+
+.dropdown {
+    display: inline-block; /* Align with other buttons */
+    vertical-align: top; /* Align top with other buttons */
+    position: relative; /* Establish a positioning context */
+}
+
+.drop-content {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 15px; /* Increase space to make room for the vertical line */
+}
+
+/* Adjust button-link within dropdown-content to match other buttons */
+.drop-content .button-link {
+    display: block; /* Stack vertically */
+    margin: 5px 0; /* Space between subpage buttons */
+}
+
+.button-link:hover{
+    background-color: #0056b3;
+}
+
+/* Adjust the .spacer class if needed */
+.spacer {
+    flex-grow: 1; /* Take up remaining space */
+    height: 2px;
+    background-color: #007bff;
+}
+
+
+
+.vertical-line {
+    display: block; /* Make the div visible as a line */
+    height: 50px; /* Height of the line */
+    width: 2px; /* Width of the line */
+    background-color: #007bff; /* Color of the line */
+    margin: 5px auto; /* Center it horizontally and add some space at top and bottom */
+}
+
+
+@media (max-width: 1366px) {
+    .sitemap {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap as needed */
+        align-items: center;
+        justify-content: center;
+        margin: 126px 0 40px 0;
+    }
+}
+
+@media (max-width: 913px) {
+    .sitemap {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+        margin: 40px; /* Adjust margins for smaller screens */
+        margin-top: 126px;
+    }
+
+    .button-link, .drop-content .button-link {
+        padding: 15px 20px; /* Adjust padding for smaller screens */
+        margin-top: 10px; /* Add space between buttons */
+    }
+
+    .spacer {
+        display: none; /* Hide horizontal spacers on small screens */
+    }
+
+    .vertical-line {
+        height: 30px; /* Shorten the vertical line on small screens */
+    }
+
+    .drop-content {
+        position: static;
+        transform: none;
+        left: auto;
+        padding-top: 0;
+    }
+
+    .last{
+        margin-bottom: 30px;
+    }
+    .drop-content .last{
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-link, .drop-content .button-link {
+        width: 100%; 
+        box-sizing: border-box;
+    }
+    
+    .dropdown {
+        width: 100%;
+    }
+}

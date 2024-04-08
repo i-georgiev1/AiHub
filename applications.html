@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приложения</title>
+    <link rel="stylesheet" href="css/applications.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon ai.png">
+</head>
+<body>
+
+    <script src="js/navigation.js"></script>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="images/applications/health.png" alt="Image Description">
+            <h2>Здравеопазване</h2>
+            <a href="healthcare.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/customers.png" alt="Image Description">
+            <h2>Обслужване на клиенти</h2>
+            <a href="customers.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/finance.png" alt="Image Description">
+            <h2>Финанси</h2>
+            <a href="finance.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/manufacturing.png" alt="Image Description">
+            <h2>Производство</h2>
+            <a href="manufacturing.html" class="button-link">Научи повече</a>
+        </div>  
+        <div class="grid-item">
+            <img src="images/applications/transport.png" alt="Image Description">
+            <h2>Транспорт</h2>
+            <a href="transport.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/agriculture.png" alt="Image Description">
+            <h2>Селско стопанство</h2>
+            <a href="agri.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/retail.png" alt="Image Description">
+            <h2>Търговия</h2>
+            <a href="retail.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/edu.png" alt="Image Description">
+            <h2>Образование</h2>
+            <a href="education.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/energy.png" alt="Image Description">
+            <h2>Енергетика</h2>
+            <a href="energy.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/resources.png" alt="Image Description">
+            <h2>Човешки ресурси</h2>
+            <a href="hr.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/environment.png" alt="Image Description">
+            <h2>Околна среда</h2>
+            <a href="enviroment.html" class="button-link">Научи повече</a>
+        </div>
+        <div class="grid-item">
+            <img src="images/applications/security.png" alt="Image Description">
+            <h2>Сигурност</h2>
+            <a href="securuty.html" class="button-link">Научи повече</a>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn">↑ Top</button>
+    <script>
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.classList.add("visible");
+            } else {
+                scrollToTopBtn.classList.remove("visible");
+            }
+        };
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); 
+body{
+    font-family: "Ubuntu", sans-serif;
+}
+
+#search-results{
+    margin-top: 100px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.result-item{
+    display: flex; /* Enables Flexbox */
+    justify-content: space-between; /* Space between text and image */
+    background-color: rgb(180, 237, 247); /* Light background for contrast */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 5px; /* Reduced margin around each box */
+    box-sizing: border-box;
+    border-radius: 30px;
+    flex-basis: calc(50% - 10px); /* Adjust width for two boxes per row, considering reduced margin */
+    flex-direction: column; /* Stack items vertically */
+    align-items: left; /* Align items to the start (left) */
+    flex-basis: 100%; /* Each box takes full width */
+    margin-bottom: 20px;
+}
+
+
+.result-item button{
+    text-decoration: none;
+    display: inline-block; /* Allows padding and width styles */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center; /* Centers text inside the link */
+    width: 200px; /* Adjusts width to content */
+    margin-top: auto; /* Pushes the button to the bottom */
+    margin: auto 10px; /* Adjust as needed */
+    position: relative;
+}
+
+.result-item p{
+    padding-left: 10px;
+}
+
+.result-item h3{
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1200px){
+    #search-results{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; 
+    height: 50px;
+    line-height: 50px; 
+    text-align: center; 
+    padding: 0; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px; 
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
