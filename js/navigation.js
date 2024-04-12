@@ -237,17 +237,11 @@ body, html { \
         <button class="mobile-nav-toggle">&#9776;</button>\
         <div class="nav-links">\
             <ul>\
-                <li>\
-                    <a href="#" ><b>Въведение</b></a>\
-                    <div class="dropdown-content">\
-                        <a href="intro-goals.html"><b>Цели</b></a>\
-                        <a href="history copy.html"><b>История</b></a>\
-                        <a href="future.html"><b>Бъдеще</b></a>\
-                    </div>\
-                </li>\
+                <li><a href="intro-goals.html"><b>Цели</b></a></li>\
+                <li><a href="history copy.html"><b>История</b></a></li>\
+                <li><a href="future.html"><b>Бъдеще</b></a></li>\
                 <li><a href="applications.html"><b>Приложения</b></a></li>\
-                <li><a href="sitemap.html"><b>Карта на сайта</b></a></li>\
-                <li><a href="contact.html" ><b>Контакти</b></a></li>\
+                <li><a href="new_contact.html" ><b>Контакти</b></a></li>\
                 <form id="searchForm" class="nav-item search-bar" action="search-results.html" method="GET">\
                     <input type="search" placeholder="Търси..." id="nav-search" class="search-input" aria-label="Search" name="query">\
                     <button type="submit" class="search-btn">&#128269;</button>\
@@ -259,28 +253,7 @@ body, html { \
 
 
 var introLi = document.querySelector('.container-fluid ul li');
-var dropdownMenu = document.querySelector('.container-fluid ul li .dropdown-content');
-
-var isMouseOverLink = false;
-var isMouseOverDropdown = false;
-
-introLi.addEventListener('mouseover', function() {
-    if (window.innerWidth > 950) { 
-        isMouseOverLink = true;
-        dropdownMenu.style.display = 'block';
-    }
-});
-
-introLi.addEventListener('mouseleave', function() {
-    if (window.innerWidth > 950) { 
-        isMouseOverLink = false;
-        setTimeout(function() {
-            if (!isMouseOverDropdown && introLi.querySelector('a')) {
-                dropdownMenu.style.display = 'none';
-            }
-        }, 50); // Adjust delay as needed
-    }
-});
+var dropdownMenu = document.querySelector('.container-fluid ul li');
 
 dropdownMenu.addEventListener('mouseover', function() {
     isMouseOverDropdown = true;
@@ -295,23 +268,30 @@ dropdownMenu.addEventListener('mouseleave', function() {
     }, 50); // Adjust delay as needed
 });
 
-// Mobile nav toggle for dropdown
-introLi.addEventListener('click', function(event) {
-    if (window.innerWidth <= 950) { 
-        var displayStatus = dropdownMenu.style.display;
-        dropdownMenu.style.display = displayStatus === 'block' ? 'none' : 'block';
-    }
-});
-
-// Mobile main nav toggle
+// Mobile nav toggle
 document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
-    var navLinks = document.querySelector('.nav-links ul'); 
+    var navLinks = document.querySelector('.nav-links ul');
     if (navLinks.style.maxHeight) {
         navLinks.style.maxHeight = null;
     } else {
         navLinks.style.maxHeight = navLinks.scrollHeight + "px";
     }
 });
+
+// Dropdown Toggle for Mobile
+document.querySelectorAll('.container-fluid ul li').forEach(function(li) {
+    li.addEventListener('click', function(event) {
+        if (window.innerWidth <= 950) {
+            var dropdownMenu = this.querySelector('.dropdown-content');
+            if (dropdownMenu) {
+                var displayStatus = dropdownMenu.style.display;
+                dropdownMenu.style.display = displayStatus === 'block' ? 'none' : 'block';
+                event.stopPropagation(); // Prevents unintentional closing
+            }
+        }
+    });
+});
+
 
 
 

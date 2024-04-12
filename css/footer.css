@@ -1,0 +1,73 @@
+.site-footer {
+    background-color: rgb(27, 30, 44);
+    padding: 20px 0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 3%;
+    text-align: center;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Makes each link a block element for better spacing */
+    margin-bottom: 10px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content .button-link{
+    display: inline-block;
+}
+
+
+.button-link {
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: auto;
+    margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        margin: 20px 0; /* Adjust spacing for mobile */
+        width: 100%; /* Full width on small screens */
+    }
+
+    .site-footer {
+        font-size: 16px; /* Slightly larger font for readability */
+    }
+
+    .button-link {
+        padding: 12px 24px; /* Larger tap target for mobile */
+    }
+}
