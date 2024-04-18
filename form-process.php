@@ -33,7 +33,7 @@ if (isset($_POST['email'])) {
         $error_message .= 'Email address does not seem valid.<br>';
     }
 
-    $string_exp = "/^[A-Za-z .'-]+$/";
+    $string_exp = "/^[\p{Latin}\p{Cyrillic} .'-]+$/u";
 
     if (!preg_match($string_exp, $name)) {
         $error_message .= 'Name does not seem valid.<br>';
@@ -66,9 +66,11 @@ if (isset($_POST['email'])) {
     @mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
-    <!-- Replace this as your success message -->
+    <!-- Button to go back to the contact page -->
+    <p><a href="new_contact.html"><button type="button">Назад към контакти</button></a></p>
 
-    Thanks for contacting us, we will get back to you as soon as possible.
+    <!-- Success message -->
+    <p>Благодарим ви, че се свързахте с нас, ще се свържем с вас възможно най-скоро.</p>
 
 <?php
 }
